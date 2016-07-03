@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" image="_doggy" translatesAutoresizingMaskIntoConstraints="NO" id="bNO-At-wes">
+                                <rect key="frame" x="20" y="20" width="560" height="300"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="_doggy" translatesAutoresizingMaskIntoConstraints="NO" id="9Dt-1E-Iuw">
+                                <rect key="frame" x="20" y="300" width="560" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Dt-1E-Iuw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="4j2-pL-UiP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Dt-1E-Iuw" secondAttribute="bottom" id="4za-go-SdN"/>
+                            <constraint firstItem="bNO-At-wes" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Bx-Sd-iaG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bNO-At-wes" secondAttribute="bottom" id="8An-ry-pK4"/>
+                            <constraint firstItem="bNO-At-wes" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AnF-tH-NQh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Dt-1E-Iuw" secondAttribute="trailing" id="LoS-KC-tKX"/>
+                            <constraint firstItem="bNO-At-wes" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NQl-15-Y1F"/>
+                            <constraint firstItem="9Dt-1E-Iuw" firstAttribute="top" secondItem="bNO-At-wes" secondAttribute="bottom" constant="8" id="NgL-o3-8KX"/>
+                            <constraint firstItem="bNO-At-wes" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XMd-uc-YXF"/>
+                            <constraint firstItem="bNO-At-wes" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="XxF-NB-IUW"/>
+                            <constraint firstItem="9Dt-1E-Iuw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nEb-tG-Gm2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bNO-At-wes" secondAttribute="trailing" id="yz2-ec-13U"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NQl-15-Y1F"/>
+                                <exclude reference="XMd-uc-YXF"/>
+                                <exclude reference="NgL-o3-8KX"/>
+                                <exclude reference="8An-ry-pK4"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="blurImageView" destination="9Dt-1E-Iuw" id="VGY-KO-Ae8"/>
+                        <outlet property="imageView" destination="bNO-At-wes" id="iKG-vg-kxN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="459"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="_doggy" width="580" height="605"/>
+    </resources>
+</document>
