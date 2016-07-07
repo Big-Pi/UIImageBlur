@@ -36,7 +36,7 @@ static int i;
     
 //    img= [self whiteBG:img]; //draw image with white backgroudcolor;
     
-    img = [UIImage imageWithData:UIImageJPEGRepresentation(img, 1.0)];
+    img = [UIImage imageWithData:UIImageJPEGRepresentation(img, 1.0)]; //This works, but not efficient !!!
     
     self.blurImageView.image=[img vImageBlurWithNumber:0.2];
     
@@ -46,6 +46,20 @@ static int i;
 //    self.blurImageView.image=img;
     
     //4. modify last 2 parameter of `vImageBoxConvolve_ARGB8888` function in `UIImage+GaussianBlur.m`
+    //I tried ,may be i did it the wrong way.
+}
+
+-(UIImage *)whiteBG:(UIImage*)image{
+    UIGraphicsBeginImageContextWithOptions(image.size, YES, [UIScreen mainScreen].scale);
+    CGContextRef ctx=UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
+    CGRect fillRect=CGRectMake(0, 0, image.size.width, image.size.height);
+    CGContextFillRect(ctx,fillRect); //draw white backgroud color
+    [image drawInRect:fillRect]; //draw image on top of the white background color
+    UIImage *img= UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
 }
 
 @end
